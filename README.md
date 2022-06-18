@@ -1,4 +1,4 @@
-# comments-section
+# 高级编程之课程选课和成绩发布系统前端
 
 ### Use 
 ```
@@ -7,7 +7,6 @@ npm install&&npm run serve
 
 ### Preview
 
-![image-20220108225855345](./public/image-20220108225855345.png)
 
 
 
