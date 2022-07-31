@@ -6,20 +6,16 @@
 
 <script>
 
-import Header from "./components/Header";
-import Aside from "./components/StuAside";
+
 export default {
   name:"Layout",
   components:{
-    Aside,
-    Header
+
   }
 }
 </script>
 <style lang="scss">
 #app{
-  width: 90%;
-  margin-left: 5%;
   background-color: whitesmoke;
 
 

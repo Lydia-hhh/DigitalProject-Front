@@ -1,9 +1,8 @@
 import axios from 'axios'
 import router from "@/router";
 const request = axios.create({
-
     baseURL: '/api',
-    timeout: 10000
+    timeout: 1000000
 })
 
 // request 拦截器
@@ -11,16 +10,6 @@ const request = axios.create({
 // 比如统一加token，对请求参数统一加密
 request.interceptors.request.use(config => {
     config.headers['Content-Type'] = 'application/json;charset=utf-8';
-    let userJson = sessionStorage.getItem('logisticAdmin');
-    // if(!userJson){
-    //   router.push('/login');
-    //}
-    config.headers['token'] = userJson  // 设置请求头  ycf
-    //取出sessionStorage 里面缓存的用户信息
-    /*let userJson=sessionStorage.getItem('user');//????
-    if(!userJson){
-        router.push('/login');
-    }*/
     return config
 }, error => {
     return Promise.reject(error)

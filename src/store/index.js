@@ -53,31 +53,38 @@ export default new Vuex.Store({
                     sup: '1'
                 }
             ]
+        }],
+        multi:false,
+        basicParam:{
+            mirror:2,
+            zone:'rgb',
+            histogram:'grey',
+            sx:0,
+            sy:0,
+            fx:1,
+            fy:1,
+            angle:0,
+            factor:1,
+            op:'+',
+            op1:'no'
         },
-            {
-                id: '2',
-                sup: null,
-                name: 'Ryan_Geeks',
-                time: '1641627103',
-                content: '吃本草纲目[妙啊]',
-                subComment: [{
-                    id: '5',
-                    name: '谋杀夏洛克',
-                    time: '1641652303',
-                    content: '这龙虾看爽了 为你投个币[歪嘴]',
-                    subComment: [],
-                    sup: '2'
-                }]
-            },
-            {
-                id: '3',
-                sup: null,
-                name: '是设计师橙子',
-                time: '1641616303',
-                content: '好了好了不掉帧了',
-                subComment: []
-            }
-        ]
+        morphoParam:{
+            len:3
+        },
+        noiseParam:{
+            filter:'selectivity'
+        },
+        lineParam:{
+            threshold:118,
+            minLineLength:80,
+            maxLineGap:15
+        },
+        edgeParam:{
+            operator:'Roberts'
+        },
+        styleParam:{
+            style:'la_muse'
+        }
     },
     mutations: {
         addComment(state, data) {
@@ -90,7 +97,31 @@ export default new Vuex.Store({
                 state.comments.unshift(data)
             }
 
+        },
+        changeMulti(state,newMulti){
+            state.multi=newMulti
+
+        },
+        changeBasicParam(state,newBasicParam){
+            state.basicParam=newBasicParam
+        },
+        changeMorphoParam(state,newMorphoParam){
+            state.morphoParam=newMorphoParam
+        },
+        changeNoiseParam(state,newNoiseParam){
+            state.noiseParam=newNoiseParam
+        },
+        changeLineParam(state,newLineParam){
+            state.lineParam=newLineParam
+        },
+        changeEdgeParam(state,newEdgeParam){
+            state.edgeParam=newEdgeParam
+        },
+        changeStyleParam(state,newStyleParam){
+            state.styleParam=newStyleParam
         }
+
+
     },
     actions: {},
     modules: {}
